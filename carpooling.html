@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpooling Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+        }
+
+        .navbar .logo a {
+            color: #fff;
+            font-size: 1.5em;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+        }
+
+        .navbar .nav-links li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .navbar .nav-links a:hover {
+            background-color: #e42b2b;
+        }
+
+        .navbar .signup-btn {
+            background-color: #ff5733;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .navbar .signup-btn:hover {
+            background-color: #ff784d;
+        }
+
+        .hero {
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #ff5733;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .cta-button:hover {
+            background-color: #ff784d;
+        }
+
+        /* How It Works Section */
+        #how-it-works {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #333;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #how-it-works h2 {
+            font-size: 1.8em;
+            color: #ff5733;
+            margin-bottom: 15px;
+        }
+
+        #how-it-works p {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 0;
+            background-color: #fff;
+        }
+
+        .feature-item {
+            text-align: center;
+            width: 30%;
+        }
+
+        .feature-item img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h2 {
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .testimonials {
+            background-color: #f9f9f9;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-bottom: 20px;
+        }
+
+        .testimonial-item {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-item h3 {
+            margin-top: 10px;
+            color: #ff5733;
+        }
+
+        .call-to-action {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .call-to-action h2 {
+            margin-bottom: 20px;
+        }
+
+        .call-to-action .cta-button {
+            background-color: #ff5733;
+        }
+
+        .call-to-action .cta-button:hover {
+            background-color: #ff784d;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-media img {
+            width: 25px;
+            margin: 0 10px;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+  
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">CarpoolNow</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="works">How It Works</a></li>
+                <li><a href="find-a-ride.html">Find a Ride</a></li>
+                <li><a href="offer-a-ride.html">Offer a Ride</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="how-it-works">
+        <h2>How It Works</h2>
+        <p>Our carpooling platform connects drivers with passengers who share similar routes.</p>
+        <p>To get started, sign up and search for a ride or offer your ride. It's that simple!</p>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find Your Perfect Carpool Ride</h1>
+                <p>Save money, reduce your carbon footprint, and make new friends by sharing rides with others.</p>
+                <a href="find-a-ride.html" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-item">
+                <img src="use.png" alt="Easy to Use">
+                <h2>Easy to Use</h2>
+                <p>Quickly find and offer rides with our user-friendly platform.</p>
+            </div>
+            <div class="feature-item">
+                <img src="encrypted (1).png" alt="Secure">
+                <h2>Secure</h2>
+                <p>Your safety is our priority. Verified drivers and secure payment options.</p>
+            </div>
+            <div class="feature-item">
+                <img src="flexibility (1).png" alt="Flexible">
+                <h2>Flexible</h2>
+                <p>Choose from a variety of rides that fit your schedule and needs.</p>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-item">
+                <p>"CarpoolNow has changed my daily commute. I’ve met great people and saved so much on gas!"</p>
+                <h3>– ABHISHEK.R</h3>
+            </div>
+            <div class="testimonial-item">
+                <p>"A fantastic app! It's easy to use, and I love how secure everything feels."</p>
+                <h3>–KIRAN KANNAN.P.S.</h3>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <h2>Ready to Start Carpooling?</h2>
+            <a href="signup.html" class="cta-button">Sign Up Now</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            </div>
+            <p>&copy; 2024 CarpoolNow. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+       
+        document.querySelector('.works').addEventListener('click', function(e) {
+            e.preventDefault();
+            var howItWorksSection = document.getElementById('how-it-works');
+            if (howItWorksSection.style.display === 'none' || howItWorksSection.style.display === '') {
+                howItWorksSection.style.display = 'block';
+            } else {
+                howItWorksSection.style.display = 'none';
+            }
+        });
+
+        
+        document.addEventListener('click', function(e) {
+            var howItWorksSection = document.getElementById('how-it-works');
+            var isClickInside = howItWorksSection.contains(e.target) || document.querySelector('.works').contains(e.target);
+
+            if (!isClickInside && howItWorksSection.style.display === 'block') {
+                howItWorksSection.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
